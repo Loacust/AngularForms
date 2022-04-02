@@ -1,0 +1,49 @@
+<form [formGroup]="taskForm" class="form">
+    <p>
+        <label>Title</label>
+        <input type="text" formControlName="title">
+
+        <span *ngIf="titleFormControl.touched && titleFormControl.errors?.['required']">
+            The Title Field is required.
+        </span>
+        <span *ngIf="titleFormControl.dirty && titleFormControl.errors?.['minlength']">
+            Name must be 3 characters long.
+        </span>
+        </p> 
+
+    <p>
+        <label>Description</label>
+        <input type="text" formControlName="description">
+
+        <span *ngIf="descriptionFormControl.touched && descriptionFormControl.errors?.['required']">
+            Please Enter a Description.
+        </span>
+
+    </p>
+   <p>
+        <label>Date</label>
+        <input type="date" formControlName="date">
+    </p>
+
+    <p>
+        <label>Time</label>
+        <input type="time" formControlName="time">
+    </p>
+    <p>
+        <label>Priority Level</label>
+        <select formControlName="priority_level">
+            <option value="low">Low</option>
+            <option value="high">High</option>
+        </select>
+    </p>
+    <p>
+        <label>Category</label>
+        <select formControlName="Category">
+            <option value="relevent">Relevant</option>
+            <option value="irrelevent">Irrelevent</option>
+        </select>
+    </p>
+
+    <button type="button" [disabled]="taskForm.invalid">Submit</button>
+
+</form> -->
